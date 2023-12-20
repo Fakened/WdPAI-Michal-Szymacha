@@ -1,0 +1,244 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.mainHeader {
+    display: flex;
+    background: linear-gradient(89deg, rgba(19, 102, 209, 0.93) -6.07%, rgba(24, 115, 231, 0.54) 38.8%, rgba(14, 100, 210, 0.00) 99.62%);;
+    margin: 0%;
+    padding: 0%;
+    height: 10vh;
+    align-items: center;
+    padding-left: 2vh;
+    padding-right: 2vh;   
+}
+
+.mainHeader__logo {
+    text-align: left;
+    flex: 1;
+    display: flex;
+    width: 5vh;
+    height: 5vh;
+
+}
+
+.mainHeader__logo--text {
+    color: #eee9e9;
+    justify-content: space-between;
+    font-family: Manrope;
+    font-weight: 530;
+    font-size: 4vh;
+    margin-right: 1vh;
+}
+
+.mainHeader__user {
+    
+    text-align: right;
+    display: flex;
+    width: 5vh;
+    height: 5vh;
+}
+
+.mainHeader__user--img {
+    justify-content: space-between;
+    text-align: right;
+    width: 5vh;
+    height: 5vh;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 0%;
+    height: 100vh;
+}
+
+.mainContainer__calendar {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+button {
+    border-radius: 0.5vh;
+    background: #0E64D2;
+    font-family: Poppins;
+    font-size: 3vh;
+    color: rgba(255, 255, 255, 0.90);
+    border: none;
+}
+
+.mainContainer__menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    height: 8vh;
+}
+
+.mainContainer__menu--addTask {
+    flex: 1;
+    background-color: #ffffff;
+    text-align: right;
+}
+
+.mainContainer__calendar--menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainContainer__calendar--button {
+    margin-top: 3vh;
+    height: 6vh;
+
+}
+
+.mainContainer__calendar--date {
+    flex: 1;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.mainContainer__calendar--calendar {
+    flex: 1;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid #ddd;
+}
+
+.day {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1vh;
+    width: 11vh;
+    height: 11vh;
+}
+
+
+.AddTask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2vh;
+}
+
+.AddTask__Background {
+    background-color: #ffffff;
+    width: 80%;
+    height: 80%;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.AddTask__header {
+    display: flex;
+    flex-direction: space-between;
+
+}
+
+.AddTask__header--text {
+    color: #000;
+    font-family: Manrope;
+    font-size: 4vh;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+}
+
+.AddTask__header--close {
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    width: 3vh;
+    height: 3vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}
+
+.AddTask__form {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.AddTask__form--text {
+    color: #000;
+    font-family: Manrope;
+    font-size: 3vh;
+    flex: 1;
+    text-align: left;
+    justify-content: left;
+}
+
+.AddTask__form--input {
+    border-radius: 0.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    background: rgba(255, 255, 255, 0.08);
+    font-family: Poppins;
+    color: rgba(0, 0, 0, 0.70);
+    margin-left: 3vh;
+    margin-right: 3vh;
+    height: 5vh;
+    flex: 2;
+    font-size: 3vh;
+}
+
+.AddTask__form--element{
+    flex-direction: row;
+    flex: 1;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: 13vh;
+    text-align: center;
+    justify-content: center;
+}
+
+.AddTask__form--input--textarea {
+    border-radius: 0.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    background: rgba(255, 255, 255, 0.08);
+    font-family: Poppins;
+    color: rgba(0, 0, 0, 0.70);
+    margin-left: 3vh;
+    margin-right: 3vh;
+    height: 7vh;
+    flex: 2;
+    font-size: 2vh;
+    width: 40vh;
+    resize: none;
+}
+
+.AddTask__buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddTask__buttons--button {
+    width: 15vh;
+    height: 5vh;    
+}
