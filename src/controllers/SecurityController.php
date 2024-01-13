@@ -26,6 +26,7 @@ class SecurityController extends AppController {
         if (password_verify($password, $user->getPassword())) {
             $_SESSION["email"] = $user->getEmail();
             $_SESSION["id"] = $user->getId();
+            $_SESSION["team_id"] = $user->getTeamId();
             if ($user->getIs_admin() === true) {
                 $_SESSION["is_admin"] = "true";
             } else {
@@ -78,5 +79,56 @@ class SecurityController extends AppController {
 
     }
 
+    public function logout()
+    {
+        session_unset();
+        session_destroy();
+        $this->render('main');
+    }
 
+    public function changePassword() {
+        $oldPass = $_POST['oldPassword'];
+        $newPass = $_POST['newPassword'];
+        if ($oldPass === '' || $newPass === '') {
+            echo json_encode(["message" => "empty"]);
+            return;
+        }
+
+        if (strlen($newPass) < 8) {
+            echo json_encode(["message" => "short"]);
+            return;
+        }
+
+        if (!preg_match('/[A-Z]/', $newPass)) {
+            echo json_encode(["message" => "capital"]);
+            return;
+        }
+
+        if (!preg_match('/[0-9]/', $newPass)) {
+            echo json_encode(["message" => "number"]);
+            return;
+        }
+
+        $userRepository = new UserRepository();
+        $user = $userRepository->getUser($_SESSION['email']);
+        if (!$user) {
+            echo json_encode(["message" => "empty"]);
+            return;
+        }
+
+        if (!password_verify($oldPass, $user->getPassword())) {
+            echo json_encode(["message" => "old"]);
+            return;
+        }
+        $hash = password_hash($newPass, PASSWORD_BCRYPT);
+        
+        $test =$userRepository->changePassword($hash, $_SESSION['id']);
+        if ($test) {
+            echo json_encode(["message" => "success"]);
+            return;
+        } else {
+            echo json_encode(["message" => "empty"]);
+            return;
+        }
+    }
 }

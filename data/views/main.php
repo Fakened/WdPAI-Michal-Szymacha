@@ -24,7 +24,7 @@
             <div class="mainContainer__right">
                 <div class="mainContainer__right--title">
                     <span class="mainContainer__rignt--name">Tasker</span>
-                    <img src="../img/logo.svg" alt="Logo" class="mainContainer__left--logo">
+                    <img src="data/img/logo.svg" alt="Logo" class="mainContainer__left--logo">
                 </div>
                 <div class="mainContainer__left--line">
                     <p class="mainContainer__left--text">Tasker is a simple application for managing tasks.</p>

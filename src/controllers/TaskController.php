@@ -38,6 +38,27 @@ class TaskController extends AppController {
         $task = new UserTaskRepository();
         $test =$task->addTask($id, $title, $date, $time, $priority, $description);
         if ($test) {
+            $response = ["messege" => "success", "task" => $test];
+            echo json_encode($response);
+            return;
+        } else {
+            $response = ["messege" => "empty"];
+            echo json_encode($response);
+            return;
+        }
+    }
+
+    public function addTeamTask() {
+        $title = $_POST['title'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $description = $_POST['description'];
+        $priority = $_POST['priority'];
+        $id = $_SESSION['id'];
+        $teamId = $_SESSION['team_id'];
+        $task = new UserTaskRepository();
+        $test =$task->addTeamTask($id, $teamId, $title, $date, $time, $priority, $description);
+        if ($test) {
             $response = ["messege" => "empty"];
             echo json_encode($response);
             return;
@@ -48,4 +69,18 @@ class TaskController extends AppController {
         }
     }
 
+    public function doneTask() {
+        $id = $_POST['id'];
+        $task = new UserTaskRepository();
+        $test =$task->doneTask($id);
+        if ($test) {
+            $response = ["messege" => "success"];
+            echo json_encode($response);
+            return;
+        } else {
+            $response = ["messege" => "success", "task" => $test];
+            echo json_encode($response);
+            return;
+        }
+    }
 }

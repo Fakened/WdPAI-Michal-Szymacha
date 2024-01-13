@@ -1,6 +1,7 @@
 body {
     margin: 0%;
     padding: 0%;
+    overflow: hidden;
 }
 
 .mainHeader {
@@ -241,4 +242,63 @@ table {
 .AddTask__buttons--button {
     width: 15vh;
     height: 5vh;    
+}
+
+.TaskView {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2vh;
+}
+
+.TaskView__Background {
+    background-color: #ffffff;
+    max-width: 80%;
+    height: 80%;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    overflow: block;
+    max-height: 70%;
+}
+
+.TaskView__Tasks {
+    overflow: auto;
+}
+
+tbody {
+    overflow: auto;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .AddTask__form--element {
+        flex-direction: column;
+        width: 15%;
+    }
+    AddTask__form--element {
+        flex-direction: column;
+        width: 85%;
+    }
+    .addTR {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.taskth, .tasktd {
+    padding: 3vh;
+    border-left:1px solid #0E64D2;
+    border-right:1px solid #0E64D2;
+}
+
+.tasktr:nth-child(even) {
+    background-color: #f2f2f2;
 }

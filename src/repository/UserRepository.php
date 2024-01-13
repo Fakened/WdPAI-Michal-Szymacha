@@ -23,6 +23,7 @@ class UserRepository extends Repository
             $user['is_admin'],
             $user['pass'],
             $user['email'],
+            $user['team_id']
         );
     }
 
@@ -33,11 +34,28 @@ class UserRepository extends Repository
             INSERT INTO public.user ( pass, email, is_admin, login)
             VALUES (?, ?, false, ?)
         ');
-
+        
         $stmt->execute([
             $pass,
             $email,
             $email,
         ]);
+    }
+
+    public function changePassword(string $password, string $id)
+    {
+        $stmt = $this->database->connect()->prepare('
+            UPDATE public.user SET pass = ? WHERE id = ?
+        ');
+        $stmt->execute([
+            $password,
+            $id,
+        ]);
+
+        if ($stmt->rowCount() == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

@@ -3,12 +3,15 @@
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/TaskController.php';
+require_once 'src/controllers/InfoController.php';
+require_once 'src/controllers/TeamController.php';
 
 class Router {
 
   public static $routes;
 
   public static function get($url, $view) {
+
     self::$routes[$url] = $view;
   }
 
@@ -19,7 +22,7 @@ class Router {
   public static function run ($url) {
     $action = explode("/", $url)[0];
     if (!array_key_exists($action, self::$routes)) {
-      die("Wrong url!");
+      die("Wrong url! + $action + $url");
     }
 
     $controller = self::$routes[$action];

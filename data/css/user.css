@@ -1,0 +1,182 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.mainHeader {
+    display: flex;
+    background: linear-gradient(89deg, rgba(19, 102, 209, 0.93) -6.07%, rgba(24, 115, 231, 0.54) 38.8%, rgba(14, 100, 210, 0.00) 99.62%);;
+    margin: 0%;
+    padding: 0%;
+    height: 10vh;
+    align-items: center;
+    padding-left: 2vh;
+    padding-right: 2vh;   
+}
+
+.mainHeader__logo {
+    text-align: left;
+    flex: 1;
+    display: flex;
+    width: 5vh;
+    height: 5vh;
+
+}
+
+.mainHeader__logo--text {
+    color: #eee9e9;
+    justify-content: space-between;
+    font-family: Manrope;
+    font-weight: 530;
+    font-size: 4vh;
+    margin-right: 1vh;
+}
+
+.mainHeader__user {
+    
+    text-align: right;
+    display: flex;
+    width: 10vh;
+    height: 5vh;
+}
+
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 0%;
+    height: 100vh;
+}
+
+
+button {
+    border-radius: 0.5vh;
+    background: #0E64D2;
+    font-family: Poppins;
+    font-size: 3vh;
+    color: rgba(255, 255, 255, 0.90);
+    border: none;
+}
+
+
+.mainContainer__UserHeader {
+    color: #1b395f;
+    justify-content: space-between;
+    font-family: Manrope;
+    font-weight: 530;
+    font-size: 4vh;
+    margin-right: 1vh;
+
+}
+
+.mainContainer__User--text {
+    color: #1b395f;
+    justify-content: space-between;
+    font-family: Manrope;
+    font-weight: 530;
+    font-size: 2vh;
+    margin-right: 1vh;
+
+}
+
+.mainContainer__User--saveButton {
+    visibility: hidden;
+}
+
+.mainContainer__User{
+    margin: 1vh;
+}
+
+.AddMemberView {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2vh;
+}
+
+.AddMemberView__Background {
+    background-color: #ffffff;
+    width: 80%;
+    height: 80%;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.AddMemberView__header {
+    display: flex;
+    flex-direction: space-between;
+
+}
+
+.AddMemberView__header--text {
+    color: #000;
+    font-family: Manrope;
+    font-size: 4vh;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+}
+.mainContainer__Team {
+    max-width: 100%;
+}
+.teamTableDiv__table {
+    overflow: auto;
+}
+.AddMemberView__header--close {
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    width: 3vh;
+    height: 3vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}
+
+.teamTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1vh;
+} */
+
+.teamTable th {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: left;
+    background-color: #0E64D2;
+    color: white;
+}
+
+.teamTable td {
+    padding: 1vh;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.AddMemberView__members {
+    display: flex;
+    flex-direction: column;
+    margin: 1vh;
+    text-align: center;
+}
+
+.AddMemberView__members--table {
+    width: 100%;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.teamtabletd {
+    width: 20%;
+}

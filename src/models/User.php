@@ -6,14 +6,16 @@ class User {
     private $password;
     private $login;
     private $email;
+    private $teamId;
     
     
 
-    public function __construct(int $id, bool $is_admin, string $password, string $email) {
+    public function __construct(int $id, bool $is_admin, string $password, string $email, $teamId) {
         $this->id = $id;
         $this->is_admin = $is_admin;
         $this->password = $password;
         $this->email = $email;
+        $this->teamId = $teamId;
     }
 
     public function getPassword(): string {
@@ -47,6 +49,15 @@ class User {
 
     public function getLogin() {
         return $this->login;
+    }
+
+    public function getTeamId() {
+        return $this->teamId;
+    }
+
+    public function setTeamId($teamId) {
+        $this->teamId = $teamId;
+
     }
 
 }
